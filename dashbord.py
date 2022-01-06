@@ -132,8 +132,6 @@ def portfolio_density(data, geofile):
     df = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
     df.columns = ['ZIP', 'PRICE']
 
-    # df = df.sample(1000)
-
     geofile = geofile[geofile['ZIP'].isin(df['ZIP'].tolist())]
 
     region_price_map = folium.Map(
@@ -221,7 +219,7 @@ def commercial_distribution(data):
     fig = px.histogram(df, x='price', nbins=50)
     st.plotly_chart(fig, use_container_width=True)
 
-    return None
+    return df
 
 
 def attributes_distribution(data):
@@ -271,6 +269,55 @@ def attributes_distribution(data):
     fig = px.histogram(df, x='waterfront', nbins=2)
     c2.plotly_chart(fig, use_container_width=True)
 
+    return df
+
+
+def business_recommendations(data):
+    st.title('Business Recommendations')
+    st.header('Purchasing Recommendation Report')
+
+    # Group the median of properties by region
+    dfzip = data[['zipcode', 'price']].groupby('zipcode').median(
+    ).reset_index().rename(columns={'price': 'median_price'})
+
+    data = pd.merge(data, dfzip, how='inner', on='zipcode')
+
+    # recommendation list
+    data['recomendation'] = data[['price', 'median_price', 'condition']].apply(
+        lambda x: 'buy' if (x['price'] < x['median_price']) &
+                           (x['condition'] >= 4) else 'not buy', axis='columns')
+
+    data['condition'] = data['condition'].map({1: 'too bad',
+                                               2: 'bad',
+                                               3: 'good',
+                                               4: 'very good',
+                                               5: 'great'})
+
+    data = data[data['recomendation'] == 'buy'].copy()
+    df3 = data[['id', 'price', 'median_price', 'condition',
+               'recomendation']].sort_values('price', ascending=False).reset_index(drop=True)
+
+    st.dataframe(df3)
+    st.write(f'{df3.shape[0]} properties are recommended for purchase')
+
+    # mapa
+    st.header('Location of Recommended Properties:')
+
+    houses = data[['id', 'lat', 'long', 'price']]
+
+    fig = px.scatter_mapbox(houses,
+                            lat='lat',
+                            lon='long',
+                            size='price',
+                            color_continuous_scale=px.colors.cyclical.IceFire,
+                            size_max=15,
+                            zoom=10)
+
+    fig.update_layout(mapbox_style='open-street-map')
+    fig.update_layout(height=600, margin={'r': 0, 't': 0, 'l': 0, 'b': 0})
+    # fig.show()
+    st.plotly_chart(fig)
+
     return None
 
 
@@ -290,6 +337,9 @@ if __name__ == '__main__':
 
     portfolio_density(data, geofile)
 
-    commercial_distribution(data)
+    data = commercial_distribution(data)
 
-    attributes_distribution(data)
+    data = attributes_distribution(data)
+
+    # Business Recommendations
+    business_recommendations(data)
