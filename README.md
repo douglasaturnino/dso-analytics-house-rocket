@@ -1,9 +1,10 @@
 # House Rocket
 
-<img src="https://github.com/douglasaturnino/portfolio_projetos/tree/main/images/luke-chesser.jpg" width=70% height=70%/>
+<img src="img/luke-chesser.jpg" width=70% height=70%/>
 
 Este é um projeto fictício. A empresa, o contexto e as perguntas de negócios não são reais. Este portfólio está seguindo as recomendações do blog [Seja um Data Scientist](https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/).
 O dashboard com os produtos de dados em produção pode ser acessado via navegador pelo [Heroku](https://dso-analytics-house-rocket.herokuapp.com/). Ao acessar a página pode haver uma lentidão para aparecer, pois, o heroku depois de 30 minutos sem uso desliga a pagina web.
+O dataset está disponivel no [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction)
 
 
 ## 1. Problema de negócios
@@ -82,21 +83,39 @@ Quais ferramentas serão usadas no processo?
 * Insight de negócio: Prospectar imóvies reformados, onde o preço do imóvel seja até 5% maior que a média dos imóveis não reformados da região, nas mesmas condições.
 
 ## 5. Resultados financeiros para o negócio
-De acordo com os critérios definidos, só foram sugeridos os imóvies com condições boa ou excelentes para a compra. 
+De acordo com os critérios definidos, só foram sugeridos os imóvies com condições excelentes para a compra. 
 
-Destes, todos apresentam condições de venda com 30% de margem na sazonalidade indicada.
+Destes, todos apresentam condições de venda conforme a sazonalidade indicada abaixo:
+* 30% de margem para Primavera;
+* 25% de margem para Verão;
+* 20% de margem para Inverno;
+* 10% de margem para Outono.
 
 Mesmo com a margem citada, alguns imóvel ultrapassa o preço da mediana de preços da região. Logo, é possível aumentar ainda mais a margem, conforme as demais características do imóvel. 
 
-Considerando apenas os 30% de lucro por imóvel, o lucro total estimado caso as sugestões de compra e venda sejam seguidas é de aproximadamente R$ ### mil dólares.
+Considerando apenas o lucro por imóvel, o lucro total estimado caso as sugestões de compra e venda sejam seguidas é de aproximadamente US$ 45 milhões dólares.
 
 ## 5. Conclusão
 O objetivo do projeto foi alcançado, dado que os produtos de dados propostos foram gerados com sucesso. Os times já podem utilizar a solução para a tomada de decisão e o atingimento de metas na House Rocket.
 
 O dashboard com os produtos de dados em produção pode ser acessado via navegador pelo [Heroku](https://dso-analytics-house-rocket.herokuapp.com/).
 
+## 7. Próximoss passos
+
+Algumas melhorias nos dashboard podem ser incrementadas no futuro:
+
+* Fazer um integração melhor com as tabela de recomendação e os filtros, pois, a única coluna que é levada em 
+consideração é a coluna de preço.
+* Levar em consideração as outras condições de imóveis. O dataset mostra a condições de imoveis em uma escala de 1 a 
+5 e foi usado somente os imóveis de condição 5.
+* Pode ser estudado as regiões com maior valorização de imóveis, afim de comprar imóveis para reforma e depois 
+revendê-los com um preço maior.
+* Recomendar a compra de imóveis na baixa temporada e vendê-los na alta. Levando em consideração que as estações do 
+ano inverno e outono os preços dos imóveis estão mais desvalorizados e as estações do ano primavera e verão são as 
+estações que os imóveis estão mais valorizados.   
 
 ## 6 Referências
 * Este Projeto de Insights é parte do curso "Python do Zero ao DS", da [Comunidade DS](https://www.comunidadedatascience.com/).
 * O Dataset foi obtido no [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction).
+
 * Os significados das variáveis foi obtido no [Geocenter](https://geodacenter.github.io/data-and-lab/KingCounty-HouseSales2015/).
