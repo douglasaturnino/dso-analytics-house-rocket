@@ -12,7 +12,7 @@ O dataset está disponivel no [Kaggle](https://www.kaggle.com/harlfoxem/housesal
 A House Rocket é uma plataforma digital que tem como modelo de negócio, a compra e a venda de imóveis usando tecnologia.
 O CEO da House Rocket gostaria de maximizar a receita da empresa encontrando boas oportunidades de negócio.
 
-Sua principal estratégia é comprar boas casas em ótimas localizações com preços baixos e depois revendê-las posteriormente a preço mais altos. Quanto maior a diferença entre a compra e a venda, maior o lucro da empresa e portanto maior sua receita.
+Sua principal estratégia é comprar boas casas em ótimas localizações com preços baixos e depois revendê-las posteriormente a preços mais altos. Quanto maior a diferença entre a compra e a venda, maior o lucro da empresa e portanto maior sua receita.
 
 ### 1.2 Objetivo
 O objetivo do projeto é recomendar soluções para o negócio através de Insights gerados por uma ótima Análise Exploratória de Dados e respondendo às demandas de negócio
