@@ -69,7 +69,7 @@ Quais ferramentas serão usadas no processo?
 - Git, Github;
 - Python;
 - Streamlit;
-- Cloud Heroku.
+- Streamlit Cloud.
   
 ## 4. Os 3 principais insights dos dados
 
