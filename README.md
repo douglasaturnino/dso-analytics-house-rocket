@@ -3,7 +3,7 @@
 <img src="img/luke-chesser.jpg" width=70% height=70%/>
 
 Este é um projeto fictício. A empresa, o contexto e as perguntas de negócios não são reais. Este portfólio está seguindo as recomendações do blog da [Comunidade DS](https://www.comunidadedatascience.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/).
-O dashboard com os produtos de dados em produção pode ser acessado via navegador pelo [Heroku](https://dso-analytics-house-rocket.herokuapp.com/). Ao acessar a página pode haver uma lentidão para aparecer, pois, o heroku depois de 30 minutos sem uso desliga a página web.
+O dashboard com os produtos de dados em produção pode ser acessado via navegador pelo [streamlit](https://douglasaturnino-dso-analytics-house-rocket-dashboard-mehy13.streamlit.app/). Ao acessar a página pode haver uma lentidão para aparecer, pois, o heroku depois de 30 minutos sem uso desliga a página web.
 O dataset está disponivel no [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction)
 
 
@@ -98,7 +98,7 @@ Considerando apenas o lucro por imóvel, o lucro total estimado caso as sugestõ
 ## 5. Conclusão
 O objetivo do projeto foi alcançado, dado que os produtos de dados propostos foram gerados com sucesso. Os times já podem utilizar a solução para a tomada de decisão e o atingimento de metas na House Rocket.
 
-O dashboard com os produtos de dados em produção pode ser acessado via navegador pelo [Heroku](https://dso-analytics-house-rocket.herokuapp.com/).
+O dashboard com os produtos de dados em produção pode ser acessado via navegador pelo [streamlit](https://douglasaturnino-dso-analytics-house-rocket-dashboard-mehy13.streamlit.app/).
 
 ## 7. Próximos passos
 
@@ -112,7 +112,8 @@ consideração é a coluna de preço.
 revendê-los com um preço maior.
 * Recomendar a compra de imóveis na baixa temporada e vendê-los na alta. Levando em consideração que as estações do 
 ano inverno e outono os preços dos imóveis estão mais desvalorizados e as estações do ano primavera e verão são as 
-estações que os imóveis estão mais valorizados.   
+estações que os imóveis estão mais valorizados.
+* 
 
 ## 6 Referências
 * Este Projeto de Insights é parte do curso "Python do Zero ao DS", da [Comunidade DS](https://www.comunidadedatascience.com/).
