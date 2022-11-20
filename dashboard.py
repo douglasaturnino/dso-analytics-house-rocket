@@ -32,19 +32,28 @@ def set_feature(data):
 
 
 def overview_data(data):
-    f_attributes = st.sidebar.multiselect('Entre colmns', data.columns)
+    columns_mandatory = ['id','zipcode','price', 'sqft_living', 'price_m2']
+    columns_multiselect = data.drop(columns_mandatory, axis='columns').columns
+
+    f_attributes = st.sidebar.multiselect('Entre colmns', columns_multiselect)
     f_zipcode = st.sidebar.multiselect(
         'Entre zipcode', data['zipcode'].unique())
 
     st.title('Data Overview')
 
     if(f_zipcode != []) & (f_attributes != []):
+        for i in columns_mandatory:
+            f_attributes.append(i)
+
         data = data.loc[data['zipcode'].isin(f_zipcode), f_attributes]
 
     elif(f_zipcode != []) & (f_attributes == []):
         data = data.loc[data['zipcode'].isin(f_zipcode)]
 
     elif(f_zipcode == []) & (f_attributes != []):
+        for i in columns_mandatory:
+            f_attributes.append(i)
+
         data = data.loc[:, f_attributes]
 
     else:
