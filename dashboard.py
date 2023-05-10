@@ -13,13 +13,13 @@ import os
 st.set_page_config(layout='wide')
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def get_data(path):
     data = pd.read_csv(path)
     return data
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def get_geofile(url):
     geofile = geopandas.read_file(url)
     return geofile
