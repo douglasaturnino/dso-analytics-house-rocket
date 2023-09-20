@@ -364,7 +364,7 @@ if __name__ == '__main__':
     # ETL
     # data extration
     path = os.path.join(os.path.abspath('.'), 'datasets', 'kc_house_data.csv')
-    url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
+    url = os.path.join(os.path.abspath('.'), 'datasets', 'Zip_Codes.geojson')
 
     data = get_data(path)
     geofile = get_geofile(url)
